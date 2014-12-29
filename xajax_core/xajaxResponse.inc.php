@@ -1848,6 +1848,8 @@ class xajaxResponse
 			echo '*';
 			return;
 		}
+
+		$sData = preg_replace('/[\x00-\x08\xB-\x1F\x7F-\xA0]/', '', $sData);
 		
 		if ($this->bOutputEntities) {
 			//SkipDebug
